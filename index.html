@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム数字生成</title>
+    <style>
+        @font-face {
+            font-family: 'Dom-Diagonal-Bold';
+            src: url('path-to-your-font/Dom-Diagonal-Bold.woff2') format('woff2'),
+                 url('path-to-your-font/Dom-Diagonal-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Impact';
+            src: url('path-to-your-font/Impact.woff2') format('woff2'),
+                 url('path-to-your-font/Impact.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Dom-Diagonal-Bold', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #000000;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007acc;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+
+        .card-container {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card {
+            padding: 20px;
+            width: 120px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+        }
+
+        #randomNumber {
+            font-size: 80px;
+            font-weight: bold;
+            color: black; /* デフォルトの色 */
+            font-family: 'Impact', sans-serif; /* 新しいフォント */
+            text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+
+            #randomNumber {
+                font-size: 72px;
+            }
+
+            .card {
+                height: 180px;
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>1から100のランダム数字生成</h1>
+    <button onclick="generateRandomNumber()">数字を生成</button>
+    <div class="card-container">
+        <div class="card">
+            <p id="randomNumber"></p>
+        </div>
+    </div>
+
+    <footer>© 2024 My Random Sakka Tensai net</footer>
+
+    <script>
+        function generateRandomNumber() {
+            var randomNumber = Math.floor(Math.random() * 100) + 1;
+            var randomNumberElement = document.getElementById("randomNumber");
+
+            randomNumberElement.innerText = randomNumber;
+
+            if (randomNumber >= 1 && randomNumber <= 9) {
+                randomNumberElement.style.color = "red";
+            } else if (randomNumber >= 10 && randomNumber <= 19) {
+                randomNumberElement.style.color = "fuchsia";
+            } else if (randomNumber >= 20 && randomNumber <= 29) {
+                randomNumberElement.style.color = "orange";
+            } else if (randomNumber >= 30 && randomNumber <= 39) {
+                randomNumberElement.style.color = "yellow";
+            } else if (randomNumber >= 40 && randomNumber <= 49) {
+                randomNumberElement.style.color = "lime";
+            } else if (randomNumber >= 50 && randomNumber <= 59) {
+                randomNumberElement.style.color = "green";
+            } else if (randomNumber >= 60 && randomNumber <= 69) {
+                randomNumberElement.style.color = "aqua";
+            } else if (randomNumber >= 70 && randomNumber <= 79) {
+                randomNumberElement.style.color = "teal";
+            } else if (randomNumber >= 80 && randomNumber <= 89) {
+                randomNumberElement.style.color = "blue";
+            } else if (randomNumber >= 90 && randomNumber <= 100) {
+                randomNumberElement.style.color = "purple";
+            }
+        }
+    </script>
+</body>
+</html>
